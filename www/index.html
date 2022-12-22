@@ -59,6 +59,42 @@
         })
     }
 
+    function searchAttackLT() {
+        let TestDataClass = ncmb.DataStore(db);
+        let attack=parseInt($("#attack").val());
+        TestDataClass.lessThan("attack",attack).fetchAll()
+        .then(function(results) {
+          showResults(results);
+        })
+    }
+
+    function searchAttackGT() {
+        let TestDataClass = ncmb.DataStore(db);
+        let attack=parseInt($("#attack").val());
+        TestDataClass.greaterThan("attack",attack).fetchAll()
+        .then(function(results) {
+          showResults(results);
+        })
+    }
+
+    function searchDefenceLT() {
+        let TestDataClass = ncmb.DataStore(db);
+        let defence=parseInt($("#defence").val());
+        TestDataClass.lessThan("defence",defence).fetchAll()
+        .then(function(results) {
+          showResults(results);
+        })
+    }
+
+    function searchDefenceGT() {
+        let TestDataClass = ncmb.DataStore(db);
+        let defence=parseInt($("#defence").val());
+        TestDataClass.greaterThan("defence",defence).fetchAll()
+        .then(function(results) {
+          showResults(results);
+        })
+    }
+
     function showResults(results) {
       // テーブルのヘッダを生成
       let msg = "<table><tr><th>name</th><th>Lvl</th><th>attack</th><th>defence</th></tr>";
@@ -103,6 +139,11 @@
     <button class="btn" onclick="searchLevelLT()">Level&lt</button>
     <button class="btn" onclick="searchLevel()">Level</button>
     <button class="btn" onclick="searchLevelGT()">Level&gt</button>
+    <button class="btn" onclick="searchAttackLT()">attack&lt</button>
+    <button class="btn" onclick="searchAttackGT()">attack&gt</button>
+    <br>
+    <button class="btn" onclick="searchDefenceLT()">defence&lt</button>
+    <button class="btn" onclick="searchDefenceGT()">defence&gt</button>
     <br>
     <button class="btn" onclick="searchSyncro()">Syncro</button>
   <div id="message">message area</div>
