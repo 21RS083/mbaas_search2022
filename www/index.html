@@ -62,7 +62,7 @@
     function searchAttackLT() {
         let TestDataClass = ncmb.DataStore(db);
         let attack=parseInt($("#attack").val());
-        TestDataClass.lessThan("attack",attack).fetchAll()
+        TestDataClass.lessThanOrEqualTo("attack",attack).fetchAll()
         .then(function(results) {
           showResults(results);
         })
@@ -71,7 +71,7 @@
     function searchAttackGT() {
         let TestDataClass = ncmb.DataStore(db);
         let attack=parseInt($("#attack").val());
-        TestDataClass.greaterThan("attack",attack).fetchAll()
+        TestDataClass.greaterThanOrEqualTo("attack",attack).fetchAll()
         .then(function(results) {
           showResults(results);
         })
@@ -80,7 +80,7 @@
     function searchDefenceLT() {
         let TestDataClass = ncmb.DataStore(db);
         let defence=parseInt($("#defence").val());
-        TestDataClass.lessThan("defence",defence).fetchAll()
+        TestDataClass.lessThanOrEqualTo("defence",defence).fetchAll()
         .then(function(results) {
           showResults(results);
         })
@@ -89,7 +89,7 @@
     function searchDefenceGT() {
         let TestDataClass = ncmb.DataStore(db);
         let defence=parseInt($("#defence").val());
-        TestDataClass.greaterThan("defence",defence).fetchAll()
+        TestDataClass.greaterThanOrEqualTo("defence",defence).fetchAll()
         .then(function(results) {
           showResults(results);
         })
